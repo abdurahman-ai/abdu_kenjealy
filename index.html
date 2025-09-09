@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ky">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Менин биринчи веб бетим</title>
+    <meta name="description" content="Жөнөкөй HTML старттык шаблон" />
+
+    <!-- ИЧКИ СТИЛЬ: кааласаң бул бөлүктү кийин өзүнчө style.css файлына чыгарып койсоң болот -->
+    <style>
+      :root {
+        --bg: #0f172a;        /* фон (көлөкөлүү көк) */
+        --card: #111827;      /* бөлүкчөлөрдүн фону */
+        --text: #e5e7eb;      /* негизги текст */
+        --muted: #9ca3af;     /* кошумча текст */
+        --accent: #38bdf8;    /* көк-аары басым */
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        background: radial-gradient(1200px 800px at 20% 0%, #0b1220 0%, var(--bg) 60%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      .container { max-width: 980px; margin: 0 auto; padding: 24px; }
+      header { position: sticky; top: 0; backdrop-filter: blur(10px); background: rgba(17,24,39,0.6); border-bottom: 1px solid #1f2937; }
+      nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+      .brand { font-weight: 800; letter-spacing: .4px; }
+      .brand a { color: var(--text); text-decoration: none; }
+      .menu { display: flex; gap: 14px; }
+      .menu a { color: var(--muted); text-decoration: none; padding: 10px 12px; border-radius: 12px; }
+      .menu a:hover { color: var(--text); background: #0b1220; }
+
+      main { padding: 28px 0 48px; }
+      .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: center; }
+      .card { background: linear-gradient(180deg, rgba(56,189,248,0.07), rgba(56,189,248,0)); border: 1px solid #1f2937; border-radius: 18px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+      .hero h1 { margin: 0 0 8px; font-size: 34px; }
+      .hero p { margin: 0 0 16px; color: var(--muted); }
+      .btn { display: inline-block; background: var(--accent); color: #00131a; font-weight: 700; padding: 10px 16px; border-radius: 12px; text-decoration: none; }
+      .btn:hover { filter: brightness(1.05); }
+
+      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+      .feature h3 { margin: 0 0 6px; font-size: 18px; }
+      .feature p { margin: 0; color: var(--muted); }
+
+      footer { border-top: 1px solid #1f2937; color: var(--muted); }
+      footer .foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; font-size: 14px; }
+
+      /* Кичине экрандар үчүн */
+      @media (max-width: 760px) {
+        .hero { grid-template-columns: 1fr; }
+        .grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ЖОГОРКУ МЕНЮ: керек болсо пункттарды өзгөрт -->
+    <header>
+      <div class="container">
+        <nav>
+          <div class="brand"><a href="#">Менин Сайтым</a></div>
+          <div class="menu">
+            <a href="#">Башкы бет</a>
+            <a href="#bolum">Бөлүм</a>
+            <a href="#байланыш">Байланыш</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- БАШКЫ БӨЛҮК (Hero) -->
+      <section class="hero">
+        <div class="card">
+          <h1>Салам, Абдурахман! ✨</h1>
+          <p>Бул — жөнөкөй <strong>HTML</strong> старттык шаблон. Төмөндөгү тексттерди өз керегиңе жараша өзгөрт.
+          Коддогу комментарийлер кайсы жерге эмне жазуу керектигин көрсөтөт.</p>
+          <a class="btn" href="#bolum">Баштайлы</a>
+        </div>
+        <div class="card">
+          <h2 style="margin-top:0">Файл түзүмү</h2>
+          <ul style="margin:0 0 6px 18px">
+            <li><code>index.html</code> — негизги бет</li>
+            <li><code>style.css</code> — (кааласаң) сырткы стиль файлы</li>
+            <li><code>images/</code> — сүрөттөр</li>
+          </ul>
+          <p style="margin:6px 0 0; color:var(--muted)">Учурда style ички тегде. Кийин <code>style.css</code> кылып бөлүп чыксаң болот.</p>
+        </div>
+      </section>
+
+      <!-- ҮЧ ӨЗГӨЧӨЛҮК: мисал катары -->
+      <section id="bolum" class="grid">
+        <article class="card feature">
+          <h3>Таза структура</h3>
+          <p><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> семантикалык тегдер колдонулат.</p>
+        </article>
+        <article class="card feature">
+          <h3>Адаптив дизайн</h3>
+          <p>Телефон/планшетке ылайыкташтырылган <code>@media</code> эрежелери бар.</p>
+        </article>
+        <article class="card feature">
+          <h3>Оңой настройка</h3>
+          <p>Түстөр <code>:root</code> ичинде. Каалаган түстөрүңө алмаштыр.</p>
+        </article>
+      </section>
+
+      <!-- БАЙЛАНЫШ БӨЛҮГҮ: жөн гана үлгү -->
+      <section id="байланыш" class="card" style="margin-top:24px">
+        <h2 style="margin-top:0">Байланыш</h2>
+        <p>Электрондук почта: <a href="mailto:example@mail.com">example@mail.com</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container foot">
+        <span>© <span id="year"></span> Менин Сайтым</span>
+        <span>Иштелип чыкты: HTML + CSS</span>
+      </div>
+    </footer>
+
+    <!-- КИЧИНЕ СКРИПТ: жылды автоматтык жаңыртуу (бул бөлүк HTML файлынын акырында турсун) -->
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
